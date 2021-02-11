@@ -1,7 +1,13 @@
 require('dotenv').config();
 const express = require('express');
 const layouts = require('express-ejs-layouts');
+const session = require('express-session')
+
+const flash = require('connect-flash')
+
+
 const app = express();
+const SECRET_SESSION = process.env.SECRET_SESSION
 
 app.set('view engine', 'ejs');
 
@@ -17,7 +23,7 @@ app.get('/', (req, res) => {
 app.get('/profile', (req, res) => {
   res.render('profile');
 });
-
+//controllers
 app.use('/auth', require('./routes/auth'));
 
 
