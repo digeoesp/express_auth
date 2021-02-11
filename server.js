@@ -8,6 +8,7 @@ const flash = require('connect-flash')
 
 const app = express();
 const SECRET_SESSION = process.env.SECRET_SESSION
+const isLoggedIn = require('./middleware/isLoggedIn')
 
 app.set('view engine', 'ejs');
 

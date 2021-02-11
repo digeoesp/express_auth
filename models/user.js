@@ -19,9 +19,10 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING,
       validate:{
-        len: [1,99],
+        len: {
+        args: [1,99],
         msg: 'name must be between 1 and 99 charachters'
-      }
+      }}
     },
     email:{
       type: DataTypes.STRING,
@@ -34,9 +35,11 @@ module.exports = (sequelize, DataTypes) => {
     password: {
       type: DataTypes.STRING,
       validate: {
-        len: [ 8, 99],
+        len:{
+          args: [ 8, 99],
         msg : 'password must be between 8 and 99 characters'
       }
+     }
     }
   }, {
     sequelize,
