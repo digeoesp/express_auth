@@ -49,7 +49,7 @@ app.get('/', (req, res) => {
   res.render('index');//this is making my views folder index the home page
 });
 
-app.get('/profile', (req, res) => {
+app.get('/profile', isLoggedIn,(req, res) => {
   res.render('profile');
 });
 //controllers
